@@ -11,7 +11,7 @@ The signed string respects the following format:
 ## Typical usage example:
 
 
-### Sing session
+### Sign session
 ```python
 string_signer = StringSigner("My Secret")
 
@@ -24,7 +24,7 @@ signed_session = string_signer.sign(encoded_session)
 redis.set(session_id, signed_session)
 ```
 
-### Unsing session
+### Unsign session
 ```python
 string_signer = StringSigner("My Secret")
 
