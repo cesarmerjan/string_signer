@@ -158,6 +158,8 @@ class StringSigner:
 
     @hash_algorithm.setter
     def hash_algorithm(self, hash_algorithm: str) -> None:
+        if not isinstance(hash_algorithm, str):
+            raise InvalidAlgorithm
         if hash_algorithm not in hashlib.algorithms_available:
             raise InvalidAlgorithm
         self._hash_algorithm = hash_algorithm
@@ -172,6 +174,8 @@ class StringSigner:
 
     @separator.setter
     def separator(self, separator: str) -> None:
+        if not isinstance(separator, str):
+            raise InvalidSeparator
         if self.NOT_ALLOWED_SEPARATOR_REGEX.match(separator):
             raise InvalidSeparator
         self._separator = separator
@@ -182,7 +186,8 @@ class StringSigner:
 
     @salt_length.setter
     def salt_length(self, salt_length: int) -> None:
-        if not isinstance(salt_length, int):
+        if not isinstance(salt_length, int) \
+                or isinstance(salt_length, bool):
             raise InvalidSaltLength
 
         if salt_length <= 0:
@@ -274,7 +279,7 @@ class StringSigner:
             _string (str): the string to check if it is signed.
 
         Returns:
-            bool:
+            bool: True if _string is signed.
         """
         try:
             self._check_signature_structure(_string)
