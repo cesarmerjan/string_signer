@@ -8,8 +8,13 @@ It is also lightweight and thread-safe, which makes it ideal for use in services
 The signed string respects the following format:
     string:hash_algorithm:salt:encoded_signature
 
-## Typical usage example:
 
+## Installation
+```console
+pip install String-Signer
+```
+
+## Typical usage example:
 
 ### Sign session
 ```python
