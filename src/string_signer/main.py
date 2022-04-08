@@ -186,8 +186,7 @@ class StringSigner:
 
     @salt_length.setter
     def salt_length(self, salt_length: int) -> None:
-        if not isinstance(salt_length, int) \
-                or isinstance(salt_length, bool):
+        if not isinstance(salt_length, int) or isinstance(salt_length, bool):
             raise InvalidSaltLength
 
         if salt_length <= 0:

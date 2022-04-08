@@ -19,8 +19,8 @@ class TestStringSigner(unittest.TestCase):
         self.message = "Test message."
         self.secret_key = "hard to guess"
         self.known_salt = "salt"
-        self.expected_key_to_known_salt = b"wOd\xf5\xee\x83\xed\xb9\xbda&\xd4t\x1e<\x9f0\xd2\x1a\xeb\xa2\xb6\xac\x87\x13OS\xa9\xf9\xca\x16\xe2"
-        self.signature_to_known_salt = b"D.}\x98.\xc2f\xe7#\tb3\xb9\xda\x17!0\xa8\x14Nn8i\xa7\x1d\xe51Y\xb4\x92;\xca"
+        self.expected_key_to_known_salt = b"wOd\xf5\xee\x83\xed\xb9\xbda&\xd4t\x1e<\x9f0\xd2\x1a\xeb\xa2\xb6\xac\x87\x13OS\xa9\xf9\xca\x16\xe2"  # noqa
+        self.signature_to_known_salt = b"D.}\x98.\xc2f\xe7#\tb3\xb9\xda\x17!0\xa8\x14Nn8i\xa7\x1d\xe51Y\xb4\x92;\xca"  # noqa
 
     def test_for_signer_secret_key_set_error(self):
         with self.assertRaises(InvalidSecretKey):
@@ -183,9 +183,7 @@ class TestStringSigner(unittest.TestCase):
         expected_signature = "message:sha256:salt:signature"
 
         signature = string_signer._structure_signed_string(
-            "message",
-            "salt",
-            "signature"
+            "message", "salt", "signature"
         )
 
         self.assertEqual(signature, expected_signature)
