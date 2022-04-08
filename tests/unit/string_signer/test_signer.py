@@ -190,6 +190,26 @@ class TestStringSigner(unittest.TestCase):
 
         self.assertEqual(signature, expected_signature)
 
+    def test_check_signature_structure_method(self):
+        string_signer = StringSigner(self.secret_key)
+        signed_string = "message:sha256:salt:signature"
+        string_signer._check_signature_structure(signed_string)
+
+    def test_check_signature_structure_method_errors(self):
+        string_signer = StringSigner(self.secret_key)
+
+        with self.assertRaises(InvalidSignatureStructure):
+            signed_string = "message:sha256"
+            string_signer._check_signature_structure(signed_string)
+
+        with self.assertRaises(InvalidSignatureStructure):
+            signed_string = "message&sha256&salt&signature"
+            string_signer._check_signature_structure(signed_string)
+
+        with self.assertRaises(InvalidAlgorithm):
+            signed_string = "message:wrong:salt:signature"
+            string_signer._check_signature_structure(signed_string)
+
     def test_sign_and_unsign(self):
         string_signer = StringSigner(self.secret_key)
 

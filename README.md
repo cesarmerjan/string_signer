@@ -35,3 +35,18 @@ signed_session = redis.get(session_id)
 encoded_session = string_signer.unsign(signed_session)
 session = json.loads(base64.urlsafe_b64decode(encoded_session).decode())
 ```
+## Test Coverage
+```
+Name                                      Stmts   Miss  Cover
+-------------------------------------------------------------
+src/__init__.py                               0      0   100%
+src/string_signer/__init__.py                 2      0   100%
+src/string_signer/exceptions.py              38      0   100%
+src/string_signer/main.py                   124      0   100%
+tests/__init__.py                             0      0   100%
+tests/unit/__init__.py                        0      0   100%
+tests/unit/string_signer/__init__.py          0      0   100%
+tests/unit/string_signer/test_signer.py     219      0   100%
+-------------------------------------------------------------
+TOTAL                                       383      0   100%
+```
