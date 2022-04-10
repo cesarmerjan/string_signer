@@ -1,7 +1,11 @@
 from hashlib import algorithms_available
 
 
-class InvalidSeparator(Exception):
+class StringSignerException(Exception):
+    pass
+
+
+class InvalidSeparator(StringSignerException):
     """Exception raised for errors in the input value of separator attribute of StringSigner class.
 
     Args:
@@ -16,7 +20,7 @@ class InvalidSeparator(Exception):
         super().__init__(self.message)
 
 
-class InvalidAlgorithm(Exception):
+class InvalidAlgorithm(StringSignerException):
     """Exception raised for errors in the input value of hash_algorithm attribute of StringSigner class.
 
     Args:
@@ -29,7 +33,7 @@ class InvalidAlgorithm(Exception):
         super().__init__(self.message)
 
 
-class InvalidSaltLength(Exception):
+class InvalidSaltLength(StringSignerException):
     """Exception raised for errors in the input value of salt_length attribute of StringSigner class.
 
     Args:
@@ -42,7 +46,7 @@ class InvalidSaltLength(Exception):
         super().__init__(self.message)
 
 
-class InvalidSignedString(Exception):
+class InvalidSignedString(StringSignerException):
     """Exception raised for errors in the input value of signed_string into unsign method of StringSigner class.
 
     Args:
@@ -54,7 +58,7 @@ class InvalidSignedString(Exception):
         super().__init__(self.message)
 
 
-class InvalidSignature(Exception):
+class InvalidSignature(StringSignerException):
     """Exception raised for errors in the signature validation of StringSigner class.
 
     Args:
@@ -66,7 +70,7 @@ class InvalidSignature(Exception):
         super().__init__(self.message)
 
 
-class InvalidSignatureStructure(Exception):
+class InvalidSignatureStructure(StringSignerException):
     """Exception raised for errors in the signature validation of StringSigner class.
 
     Args:
@@ -78,7 +82,7 @@ class InvalidSignatureStructure(Exception):
         super().__init__(self.message)
 
 
-class InvalidSecretKey(Exception):
+class InvalidSecretKey(StringSignerException):
     """Exception raised for errors in the input value of secret_key attribute of StringSigner class.
 
     Args:
@@ -90,7 +94,7 @@ class InvalidSecretKey(Exception):
         super().__init__(self.message)
 
 
-class InvalidSignatureType(Exception):
+class InvalidSignatureType(StringSignerException):
     """Exception raised for errors in the signature validation into _encode_signature method of StringSigner class.
 
     Args:
@@ -102,7 +106,7 @@ class InvalidSignatureType(Exception):
         super().__init__(self.message)
 
 
-class InvalidString(Exception):
+class InvalidString(StringSignerException):
     """Exception raised for errors in the input value of _string into sign method of StringSigner class.
 
     Args:
