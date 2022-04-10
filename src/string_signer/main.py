@@ -140,6 +140,19 @@ class StringSigner:
         self.encoding = encoding
         self.encoding_errors = encoding_errors
 
+    def __str__(self) -> str:
+        return f"string signer algorithm is {self.hash_algorithm}"
+
+    def __repr__(self) -> str:
+        msg = "StringSigner(secret_key=..., "
+        msg += f"hash_algorithm={self.hash_algorithm}, "
+        msg += f"salt_length={self.salt_length}, "
+        msg += f"separator={self.separator}, "
+        msg += f"encoding={self.encoding}, "
+        msg += f"encoding_errors={self.encoding_errors}"
+        msg += ")"
+        return msg
+
     @property
     def secret_key(self) -> None:
         return self._secret_key
