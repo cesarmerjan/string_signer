@@ -8,7 +8,7 @@ README = (BASEDIR / "README.md").read_text()
 setup(
     name="String Signer",
     python_requires=">3.6",
-    version="0.1.1",
+    version="0.1.2",
     description="Used to sign strings.",
     long_description=README,
     long_description_content_type="text/markdown",

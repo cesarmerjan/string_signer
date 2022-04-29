@@ -60,13 +60,18 @@ Lorem ipsum dolor sit amet.
 Name                                      Stmts   Miss  Cover
 -------------------------------------------------------------
 src/__init__.py                               0      0   100%
-src/string_signer/__init__.py                 2      0   100%
-src/string_signer/exceptions.py              38      0   100%
-src/string_signer/main.py                   124      0   100%
+src/string_signer/__init__.py                 4      0   100%
+src/string_signer/__main__.py                29      0   100%
+src/string_signer/exceptions.py              40      0   100%
+src/string_signer/main.py                   135      0   100%
 tests/__init__.py                             0      0   100%
+tests/e2e/__init__.py                         0      0   100%
+tests/e2e/test_cli.py                        23      0   100%
+tests/integration/__init__.py                 0      0   100%
+tests/integration/test_cli.py                48      0   100%
 tests/unit/__init__.py                        0      0   100%
 tests/unit/string_signer/__init__.py          0      0   100%
-tests/unit/string_signer/test_signer.py     219      0   100%
+tests/unit/string_signer/test_signer.py     223      0   100%
 -------------------------------------------------------------
-TOTAL                                       383      0   100%
+TOTAL                                       502      0   100%
 ```

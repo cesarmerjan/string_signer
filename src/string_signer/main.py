@@ -48,10 +48,17 @@ from random import SystemRandom
 
 import _hashlib
 
-from .exceptions import (InvalidAlgorithm, InvalidSaltLength, InvalidSecretKey,
-                         InvalidSeparator, InvalidSignature,
-                         InvalidSignatureStructure, InvalidSignatureType,
-                         InvalidSignedString, InvalidString)
+from .exceptions import (
+    InvalidAlgorithm,
+    InvalidSaltLength,
+    InvalidSecretKey,
+    InvalidSeparator,
+    InvalidSignature,
+    InvalidSignatureStructure,
+    InvalidSignatureType,
+    InvalidSignedString,
+    InvalidString,
+)
 
 
 class StringSigner:
