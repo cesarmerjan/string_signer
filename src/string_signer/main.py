@@ -48,17 +48,10 @@ from random import SystemRandom
 
 import _hashlib
 
-from .exceptions import (
-    InvalidAlgorithm,
-    InvalidSaltLength,
-    InvalidSecretKey,
-    InvalidSeparator,
-    InvalidSignature,
-    InvalidSignatureStructure,
-    InvalidSignatureType,
-    InvalidSignedString,
-    InvalidString,
-)
+from .exceptions import (InvalidAlgorithm, InvalidSaltLength, InvalidSecretKey,
+                         InvalidSeparator, InvalidSignature,
+                         InvalidSignatureStructure, InvalidSignatureType,
+                         InvalidSignedString, InvalidString)
 
 
 class StringSigner:
@@ -83,13 +76,16 @@ class StringSigner:
     6. compare signatures
 
 
-    Args:
+    Attributes:
         secret_key (str): The secret that will be used to generate the key to sign the string.
         hash_algorithm (str): The hash algorithm that will be used to generate the signature. Defaults is 'sha256'.
         salt_length (int) = The salt length. Defaults is '8'.
         separator (str) = The separator that will be used in the signed string structure. Defaults is ':'.
         encoding (str) = The encoding that will be used to encode string to bytes. Defaults is 'utf-8'.
         encoding_errors (str) = The encoding error type. Defaults is 'strict'.
+        SALT_CHARS(str):
+        NOT_ALLOWED_SEPARATOR_REGEX (regex):
+        SIGNATURE_STRUCTURE (str):
 
 
     Raises:

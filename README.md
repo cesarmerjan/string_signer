@@ -40,6 +40,21 @@ signed_session = redis.get(session_id)
 encoded_session = string_signer.unsign(signed_session)
 session = json.loads(base64.urlsafe_b64decode(encoded_session).decode())
 ```
+
+### Run as module
+
+#### Encode
+```console
+user@host:~$ python3 -m string_signer s 'Lorem ipsum dolor sit amet.' $SECRET_KEY
+Lorem ipsum dolor sit amet.:sha256:dvL8WLar:7nVnLpJLWEgVwES2dU3vvrRwx9xr0GjNFWrsv83i2ag
+```
+
+#### Decode
+```console
+user@host:~$ python3 -m string_signer u 'Lorem ipsum dolor sit amet.:sha256:dvL8WLar:7nVnLpJLWEgVwES2dU3vvrRwx9xr0GjNFWrsv83i2ag' $SECRET_KEY
+Lorem ipsum dolor sit amet.
+```
+
 ## Test Coverage
 ```
 Name                                      Stmts   Miss  Cover

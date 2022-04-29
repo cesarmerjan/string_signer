@@ -1,5 +1,6 @@
-from .main import StringSigner
 from .exceptions import StringSignerException
+from .main import StringSigner
+
 __all__ = ["StringSigner", "StringSignerException"]
 
 
